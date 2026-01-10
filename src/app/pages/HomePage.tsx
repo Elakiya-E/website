@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Bot, TrendingUp, Target, Zap, Award, Users, ArrowRight, CheckCircle2, Sparkles, BarChart3, Clock, Shield } from 'lucide-react';
+import { Bot, TrendingUp, Target, Zap, Award, Users, ArrowRight, CheckCircle2, BarChart3, Clock, Shield, Hammer } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export default function HomePage() {
@@ -32,7 +32,7 @@ export default function HomePage() {
   const processSteps = [
     { number: '01', title: 'Audit', description: 'We assess your current demand flow, data, and conversion gaps.', icon: <BarChart3 /> },
     { number: '02', title: 'Strategy', description: 'AI backed growth architecture tailored to your sector and goals.', icon: <Target /> },
-    { number: '03', title: 'Build', description: 'Landing systems, automation workflows, and tracking infrastructure.', icon: <Sparkles /> },
+    { number: '03', title: 'Build', description: 'Landing systems, automation workflows, and tracking infrastructure.', icon: <Hammer /> },
     { number: '04', title: 'Automate', description: 'AI handles lead scoring, routing, and optimization.', icon: <Bot /> },
     { number: '05', title: 'Optimize', description: 'Continuous improvement driven by performance data.', icon: <TrendingUp /> },
     { number: '06', title: 'Scale', description: 'Expand reach while maintaining efficiency and compliance.', icon: <Award /> },
@@ -76,43 +76,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background */}
+        {/* Animated Background */}
         <div className="absolute inset-0">
-          <motion.div
-            className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, 50, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-20"
-            animate={{
-              x: [0, -100, 0],
-              y: [0, -50, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary rounded-full blur-3xl opacity-10"
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
+          {/* Blobs removed for cleaner look */}
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -135,26 +101,9 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-foreground">
                 Where Smart Marketing Meets{' '}
-                <motion.span
-                  className="text-black inline-block"
-                  animate={{
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  style={{
-                    backgroundImage: 'linear-gradient(90deg, #1fb57a, #16a5b2, #1fb57a)',
-                    backgroundSize: '200% auto',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    color: 'transparent',
-                  }}
-                >
+                <span className="text-primary inline-block">
                   Green Innovation
-                </motion.span>
+                </span>
               </h1>
 
               <p className="text-xl md:text-2xl mb-8 text-muted-foreground">
@@ -170,7 +119,7 @@ export default function HomePage() {
                 <motion.div variants={itemVariants}>
                   <Link
                     to="/contact"
-                    className="group px-8 py-4 bg-primary text-white rounded-lg hover:bg-[#1a9d69] transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="group px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Get a Free Audit
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -179,7 +128,7 @@ export default function HomePage() {
                 <motion.div variants={itemVariants}>
                   <Link
                     to="/case-studies"
-                    className="group px-8 py-4 border-2 border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm"
+                    className="group px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     See Case Studies
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -337,7 +286,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="group relative bg-gradient-to-b from-white to-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_20px_50px_rgba(31,181,122,0.15)] transition-all duration-300 border border-gray-100 hover:border-primary/30"
+                className="group relative bg-gradient-to-b from-white to-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_20px_50px_rgba(228,185,11,0.15)] transition-all duration-300 border border-gray-100 hover:border-primary/30"
               >
                 <div className="relative h-48 overflow-hidden">
                   <motion.div
@@ -486,10 +435,10 @@ export default function HomePage() {
                   <motion.div
                     className="hidden lg:block w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full border-4 border-white shadow-lg z-10"
                     initial={{ scale: 0 }}
-                    whileInView={{ scale: 1, boxShadow: "0 0 0 0 rgba(31, 181, 122, 0.7)" }}
+                    whileInView={{ scale: 1, boxShadow: "0 0 0 0 rgba(228, 185, 11, 0.7)" }}
                     viewport={{ once: true }}
                     animate={{
-                      boxShadow: ["0 0 0 0 rgba(31, 181, 122, 0.7)", "0 0 0 10px rgba(31, 181, 122, 0)"]
+                      boxShadow: ["0 0 0 0 rgba(228, 185, 11, 0.7)", "0 0 0 10px rgba(228, 185, 11, 0)"]
                     }}
                     transition={{
                       type: "spring", stiffness: 200, delay: index * 0.1,
@@ -511,7 +460,7 @@ export default function HomePage() {
           >
             <Link
               to="/process"
-              className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Learn More About Our Process
               <ArrowRight className="ml-2" size={20} />
@@ -573,7 +522,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   to="/case-studies"
-                  className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-[#1a9d69] transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
                 >
                   Read Full Case Study
                   <ArrowRight className="ml-2" size={20} />
@@ -738,7 +687,6 @@ export default function HomePage() {
 
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-white" />
                   What you get:
                 </h3>
                 <ul className="space-y-4">
@@ -782,7 +730,7 @@ export default function HomePage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-lg hover:bg-[#1a9d69] transition-all duration-300 shadow-lg font-semibold w-full sm:w-auto justify-center"
+                  className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg font-semibold w-full sm:w-auto justify-center"
                 >
                   Get a Free Audit
                 </Link>
@@ -790,7 +738,7 @@ export default function HomePage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 border-2 border-foreground text-foreground rounded-lg hover:bg-foreground hover:text-white transition-all duration-300 font-semibold w-full sm:w-auto justify-center"
+                  className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg font-semibold w-full sm:w-auto justify-center"
                 >
                   Request a Quote
                 </Link>

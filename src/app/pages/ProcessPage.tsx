@@ -19,7 +19,7 @@ export default function ProcessPage() {
         'Compliance considerations'
       ],
       image: 'https://images.unsplash.com/photo-1765438869297-6fa4b627906a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHN0cmF0ZWd5JTIwcGxhbm5pbmd8ZW58MXx8fHwxNzY2NDkwMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#1fb57a',
+      color: 'var(--primary)',
     },
     {
       number: '02',
@@ -35,7 +35,7 @@ export default function ProcessPage() {
         'KPIs & success metrics'
       ],
       image: 'https://images.unsplash.com/photo-1730382624761-af8112d26209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWNjZXNzJTIwZ3JhcGglMjBncm93dGh8ZW58MXx8fHwxNzY2NTYyNjA5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#16a5b2',
+      color: 'var(--accent)',
     },
     {
       number: '03',
@@ -50,7 +50,7 @@ export default function ProcessPage() {
         'Tracking & analytics setup'
       ],
       image: 'https://images.unsplash.com/photo-1762341107847-d4d75c6da8c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2NjU1MDc0NXww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#1fb57a',
+      color: 'var(--primary)',
     },
     {
       number: '04',
@@ -65,7 +65,7 @@ export default function ProcessPage() {
         'Performance monitoring'
       ],
       image: 'https://images.unsplash.com/photo-1752614671119-4868a91efc14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaSUyMHJvYm90JTIwYXV0b21hdGlvbnxlbnwxfHx8fDE3NjY1NjI2MDh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#16a5b2',
+      color: 'var(--accent)',
     },
     {
       number: '05',
@@ -80,7 +80,7 @@ export default function ProcessPage() {
         'Conversion rates'
       ],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc2NjU1OTA3Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#1fb57a',
+      color: 'var(--primary)',
     },
     {
       number: '06',
@@ -95,7 +95,7 @@ export default function ProcessPage() {
         'Long-term growth planning'
       ],
       image: 'https://images.unsplash.com/photo-1682336869523-2c6859f781cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFya2V0aW5nJTIwd29ya3NwYWNlfGVufDF8fHx8MTc2NjUxMzQ3Nnww&ixlib=rb-4.1.0&q=80&w=1080',
-      color: '#16a5b2',
+      color: 'var(--accent)',
     },
   ];
 
@@ -153,13 +153,13 @@ export default function ProcessPage() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="inline-block px-4 py-2 bg-[#1fb57a]/10 rounded-full border border-[#1fb57a]/20 mb-6"
+              className="inline-block px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6"
             >
-              <span className="text-sm font-semibold text-[#1fb57a]">Our Proven Process</span>
+              <span className="text-sm font-semibold text-primary">Our Proven Process</span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#102028]">
-              A Structured Path from <span className="text-[#1fb57a]">Insight</span> to Scaled Growth
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+              A Structured Path from <span className="text-primary">Insight</span> to Scaled Growth
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -182,8 +182,8 @@ export default function ProcessPage() {
                   variants={itemVariants}
                   className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/50 shadow-sm"
                 >
-                  <div className="text-[#1fb57a]">{item.icon}</div>
-                  <span className="text-[#102028]">{item.text}</span>
+                  <div className="text-primary">{item.icon}</div>
+                  <span className="text-foreground">{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -242,7 +242,7 @@ export default function ProcessPage() {
                         <div className="text-sm font-semibold" style={{ color: step.color }}>
                           STEP {step.number}
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#102028]">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                           {step.title}
                         </h2>
                       </div>
@@ -254,13 +254,13 @@ export default function ProcessPage() {
 
                     <div className="flex items-center gap-4 mb-8">
                       <div className="flex items-center gap-2 text-gray-600">
-                        <span className="font-semibold text-[#1fb57a]">Outcome:</span>
+                        <span className="font-semibold text-primary">Outcome:</span>
                         <span>{step.outcome}</span>
                       </div>
                     </div>
 
                     <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100">
-                      <h3 className="font-semibold text-[#102028] mb-4">What We Review/Define/Build:</h3>
+                      <h3 className="font-semibold text-foreground mb-4">What We Review/Define/Build:</h3>
                       <ul className="space-y-3">
                         {step.deliverables.map((deliverable, deliverableIndex) => (
                           <motion.li
@@ -276,7 +276,7 @@ export default function ProcessPage() {
                               whileHover={{ scale: 1.2, rotate: 360 }}
                               transition={{ duration: 0.3 }}
                             >
-                              <CheckCircle2 className="w-5 h-5 text-[#1fb57a] flex-shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                             </motion.div>
                             <span className="text-gray-700">{deliverable}</span>
                           </motion.li>
@@ -369,11 +369,11 @@ export default function ProcessPage() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="inline-block px-4 py-2 bg-[#1fb57a]/10 rounded-full mb-4"
+              className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4"
             >
-              <span className="text-[#1fb57a] font-semibold">Why It Works</span>
+              <span className="text-primary font-semibold">Why It Works</span>
             </motion.div>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#102028] mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
               Built on Proven Principles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -396,13 +396,13 @@ export default function ProcessPage() {
                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
                 <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-[#1fb57a] to-[#16a5b2] rounded-full flex items-center justify-center text-white mb-6 mx-auto"
+                  className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white mb-6 mx-auto"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold text-[#102028] mb-3 text-center">{item.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3 text-center">{item.title}</h3>
                 <p className="text-gray-600 text-center">{item.description}</p>
               </motion.div>
             ))}
@@ -417,14 +417,14 @@ export default function ProcessPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden bg-gradient-to-br from-[#102028] via-[#1a3341] to-[#102028] rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl"
+            className="relative overflow-hidden bg-primary rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl"
           >
             {/* Animated Particles */}
             <div className="absolute inset-0">
               {[...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-2 h-2 bg-[#1fb57a] rounded-full"
+                  className="absolute w-2 h-2 bg-white/20 rounded-full"
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
@@ -448,34 +448,34 @@ export default function ProcessPage() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="inline-block w-20 h-20 bg-[#1fb57a]/20 rounded-full flex items-center justify-center mb-6 mx-auto"
+                className="inline-block w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-6 mx-auto"
               >
-                <Rocket className="w-10 h-10 text-[#1fb57a]" />
+                <Rocket className="w-10 h-10 text-white" />
               </motion.div>
 
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
                 Ready to Start?
               </h2>
               <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
                 Discover how this process can work for your business.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col items-center gap-4 justify-center">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
                     to="/contact"
-                    className="inline-flex items-center px-8 py-4 bg-[#1fb57a] text-white rounded-lg hover:bg-[#1a9d69] transition-all duration-300 shadow-lg"
+                    className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg font-semibold"
                   >
                     Get a Free Audit
                     <ArrowRight className="ml-2" size={20} />
                   </Link>
                 </motion.div>
-                <p className="text-sm text-gray-400 mt-2">
-                  We’ll respond within 24 hours.
-                </p>
+                <div className="flex items-center gap-2 mt-4 text-white/90 font-semibold">
+                  <span>We’ll respond within 24 hours.</span>
+                </div>
               </div>
             </div>
           </motion.div>

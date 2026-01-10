@@ -29,8 +29,8 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-        ? 'backdrop-blur-md shadow-lg border-b border-white/10'
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? 'shadow-lg border-b border-white/10'
         : 'border-b border-transparent'
         }`}
       style={{ backgroundColor: '#000943' }}
@@ -83,7 +83,7 @@ export default function Header() {
             >
               <Link
                 to="/contact"
-                className="px-6 py-3 rounded-lg transition-all duration-200 bg-white text-primary font-bold shadow-md hover:shadow-xl relative overflow-hidden group"
+                className="px-6 py-3 rounded-lg transition-all duration-200 bg-white text-primary font-bold shadow-md hover:shadow-xl relative overflow-hidden group hover:bg-gray-100"
               >
                 <span className="relative z-10">Get a Free Audit</span>
                 <motion.div
@@ -135,7 +135,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#000943] border-t border-white/10"
+            className="lg:hidden bg-[#000943] border-t border-white/10 max-h-[calc(100vh-80px)] overflow-y-auto"
           >
             <motion.div
               className="px-4 py-4 space-y-2"
@@ -183,7 +183,7 @@ export default function Header() {
                 <Link
                   to="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-center px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white shadow-md mt-4"
+                  className="block text-center px-6 py-3 rounded-lg bg-white text-primary font-bold shadow-md mt-4 hover:bg-gray-100"
                 >
                   Get a Free Audit
                 </Link>

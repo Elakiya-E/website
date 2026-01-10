@@ -20,7 +20,7 @@ export default function App() {
         <div className="absolute top-[20%] left-[20%] w-[400px] h-[400px] rounded-full bg-gray-100/40 blur-3xl mix-blend-multiply animate-blob animation-delay-4000"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
-      <div className="min-h-screen flex flex-col relative">
+      <div className="min-h-screen flex flex-col relative pt-20">
         <Header />
         <main className="flex-grow">
           <Routes>

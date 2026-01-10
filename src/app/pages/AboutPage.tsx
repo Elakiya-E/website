@@ -68,11 +68,11 @@ export default function AboutPage() {
                 transition={{ type: "spring", stiffness: 200 }}
                 className="inline-block px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6"
               >
-                <span className="text-sm font-semibold text-black">About AdSyncro</span>
+                <span className="text-sm font-semibold text-primary">About AdSyncro</span>
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Built for <span className="text-black">Intelligent</span>, Scalable Growth
+                Built for <span className="text-primary">Intelligent</span>, Scalable Growth
               </h1>
 
               <p className="text-xl text-muted-foreground mb-8">
@@ -132,7 +132,7 @@ export default function AboutPage() {
                   <p>
                     Growth today is complex. Businesses face rising acquisition costs, fragmented data, compliance pressures, and limited operational bandwidth.
                   </p>
-                  <p className="font-semibold text-black text-xl">
+                  <p className="font-semibold text-primary text-xl">
                     AdSyncro was built to solve this.
                   </p>
                   <p>
@@ -203,7 +203,7 @@ export default function AboutPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4"
             >
-              <span className="text-black font-semibold">Our Philosophy</span>
+              <span className="text-primary font-semibold">Our Philosophy</span>
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Growth Should Be</h2>
           </div>
@@ -271,26 +271,51 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-white/50 backdrop-blur-md rounded-3xl p-10 shadow-xl border border-white/60"
+            className="bg-primary rounded-3xl p-10 shadow-xl border border-primary/10 relative overflow-hidden"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Ready to Build Smarter Growth?
-            </h2>
-            <p className="text-xl mb-10 text-muted-foreground max-w-2xl mx-auto">
-              Discover how AdSyncro can support your growth journey.
-            </p>
+            {/* Animated Particles */}
+            <div className="absolute inset-0">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-white/20 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -30, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
+            </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-10 py-5 bg-primary text-white text-lg font-bold rounded-xl hover:bg-[#1a9d69] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-              >
-                Get a Free Audit
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <p className="text-sm text-gray-400 opacity-80 mt-2">
-                We’ll respond within 24 hours.
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+                Ready to Build Smarter Growth?
+              </h2>
+              <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">
+                Discover how AdSyncro can support your growth journey.
               </p>
+
+              <div className="flex flex-col items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-10 py-5 bg-white text-primary text-lg font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                >
+                  Get a Free Audit
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+                <div className="flex items-center gap-2 mt-2 text-white/90 font-semibold">
+                  <span>We’ll respond within 24 hours.</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

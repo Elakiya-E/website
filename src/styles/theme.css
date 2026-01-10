@@ -2,7 +2,7 @@
 
 :root {
   --font-size: 16px;
-  --background: #E5E5E5;
+  --background: #eef0f5;
   /* Palette Grey */
   --foreground: #000000;
   /* Stratos Blue */
@@ -13,16 +13,16 @@
   --primary: #000943;
   /* Stratos Blue */
   --primary-foreground: #ffffff;
-  --secondary: #636683;
-  /* Slate Blue */
-  --secondary-foreground: #ffffff;
+  --secondary: #e4b90b;
+  /* Golden Yellow */
+  --secondary-foreground: #000000;
   --muted: #d0d0d0;
   /* Darker muted background */
   --muted-foreground: #2d2d3f;
   /* Charcoal for high contrast text */
-  --accent: #3B3B58;
-  /* Deep Indigo Accent */
-  --accent-foreground: #ffffff;
+  --accent: #e4b90b;
+  /* Golden Yellow Accent */
+  --accent-foreground: #000000;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(0, 9, 67, 0.1);
@@ -32,8 +32,8 @@
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #000943;
-  /* Stratos Blue Ring */
+  --ring: #e4b90b;
+  /* Golden Yellow Ring */
   --chart-1: #000943;
   --chart-2: #636683;
   --chart-3: #000943;
@@ -154,6 +154,7 @@
 
   html {
     font-size: var(--font-size);
+    overflow-x: hidden;
   }
 
   h1 {

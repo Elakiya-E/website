@@ -221,30 +221,61 @@ export default function BlogPage() {
 
       {/* Final CTA */}
       <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="relative overflow-hidden bg-primary rounded-3xl p-8 md:p-16 text-center text-white shadow-2xl"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Want Practical Growth Insights?
-            </h2>
-            <p className="text-xl mb-10 text-muted-foreground max-w-2xl mx-auto">
-              Subscribe or explore how AI powered automation can support your growth strategy.
-            </p>
+            {/* Animated Particles */}
+            <div className="absolute inset-0">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-white/20 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -30, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
+            </div>
 
-            <div className="flex flex-col items-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-10 py-5 bg-primary text-white text-lg font-bold rounded-xl hover:bg-[#1a9d69] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-              >
-                Get a Free Audit
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <p className="text-sm text-gray-400 opacity-80 mt-2">
-                We’ll respond within 24 hours.
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+                Want Practical Growth Insights?
+              </h2>
+              <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">
+                Subscribe or explore how AI powered automation can support your growth strategy.
               </p>
+
+              <div className="flex flex-col items-center gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center px-10 py-5 bg-white text-primary text-lg font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl"
+                  >
+                    Get a Free Audit
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </motion.div>
+                <p className="text-sm text-gray-400 opacity-80 mt-2">
+                  We’ll respond within 24 hours.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

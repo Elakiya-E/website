@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Zap, TrendingUp, Rocket, Sparkles, HelpCircle, DollarSign } from 'lucide-react';
+import { Check, ArrowRight, Zap, TrendingUp, Rocket, HelpCircle, DollarSign } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PricingPage() {
@@ -182,7 +182,7 @@ export default function PricingPage() {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: plan.popular ? 1.02 : 1.05 }}
-                className={`relative bg-white rounded-3xl shadow-xl overflow-hidden ${plan.popular ? 'ring-4 ring-secondary md:scale-105' : ''
+                className={`relative bg-white rounded-3xl shadow-xl overflow-hidden ${plan.popular ? 'md:scale-105' : ''
                   }`}
               >
                 {plan.popular && (
@@ -192,7 +192,6 @@ export default function PricingPage() {
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <Sparkles className="inline w-4 h-4 mr-1" />
                     MOST POPULAR
                   </motion.div>
                 )}
