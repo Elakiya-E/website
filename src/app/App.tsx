@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import SolutionsPage from './pages/SolutionsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import ProcessPage from './pages/ProcessPage';
 import PricingPage from './pages/PricingPage';
@@ -10,10 +11,13 @@ import ContactPage from './pages/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import ScrollToHash from './components/ScrollToHash';
+
 export default function App() {
   return (
     <Router>
-      <div className="fixed inset-0 -z-10 bg-background bg-gradient-to-br from-secondary/20 to-primary/20"></div>
+      <ScrollToHash />
+      <div className="fixed inset-0 -z-10 bg-[#D9DCE5]"></div>
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl opacity-60 mix-blend-multiply animate-blob"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-secondary/5 blur-3xl opacity-60 mix-blend-multiply animate-blob animation-delay-2000"></div>
@@ -27,6 +31,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/pricing" element={<PricingPage />} />

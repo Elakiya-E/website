@@ -314,7 +314,7 @@ export default function CaseStudiesPage() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 }}
                     >
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-col items-center text-center gap-4">
                         <motion.div
                           animate={{
                             rotate: [0, 5, -5, 0],

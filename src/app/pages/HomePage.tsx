@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Bot, TrendingUp, Target, Zap, Award, Users, ArrowRight, CheckCircle2, BarChart3, Clock, Shield, Hammer } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
+import heroImage from '../../assets/hero-image.jpg';
+
 export default function HomePage() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -10,22 +12,32 @@ export default function HomePage() {
 
   const services = [
     {
+      id: 'ai-automation',
+      icon: <Bot className="w-12 h-12 text-primary" />,
+      title: 'AI Automation',
+      description: 'Intelligent systems that connect marketing, data, and operations to remove manual effort and improve lead quality.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY3RpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwYXV0b21hdGlvbnxlbnwxfHx8fDE3NjY1NzYzNDJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 'retrofit',
       icon: <TrendingUp className="w-12 h-12 text-primary" />,
-      title: 'Retrofit & Energy',
+      title: 'Retrofit Lead Gen',
       description: 'Generate high intent homeowner demand with AI optimized targeting, grant aligned messaging, and conversion ready journeys.',
       image: 'https://images.unsplash.com/photo-1630404991412-9504d094e8ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGJ1aWxkaW5nJTIwc3VzdGFpbmFibGV8ZW58MXx8fHwxNzY2NTYyMTI3fDA&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
-      icon: <Shield className="w-12 h-12 text-primary" />,
-      title: 'Regulated Services',
-      description: 'Growth systems designed for industries with strict compliance, data protection, and approval workflows.',
+      id: 'paid-media',
+      icon: <Target className="w-12 h-12 text-primary" />,
+      title: 'Paid Media',
+      description: 'Run performance campaigns optimized by AI insights, ensuring every click feeds into a measurable system.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc2NjU1OTA3Mnww&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
-      icon: <BarChart3 className="w-12 h-12 text-primary" />,
-      title: 'Digital Growth (SMEs)',
-      description: 'Automation led growth for SMEs ready to scale without increasing operational overhead.',
-      image: 'https://images.unsplash.com/photo-1682336869523-2c6859f781cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFya2V0aW5nJTIwd29ya3NwYWNlfGVufDF8fHx8MTc2NjUxMzQ3Nnww&ixlib=rb-4.1.0&q=80&w=1080',
+      id: 'seo-content',
+      icon: <Award className="w-12 h-12 text-primary" />,
+      title: 'SEO & Content',
+      description: 'Build long term visibility using intent driven SEO and content designed to convert, not just rank.',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW8lMjBtYXJrZXRpbmclMjBjb250ZW50fGVufDF8fHx8MTc2NjU3NjM0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
     },
   ];
 
@@ -161,8 +173,8 @@ export default function HomePage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1628206554160-63e8c921e398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMHJlbmV3YWJsZSUyMGVuZXJneXxlbnwxfHx8fDE3NjY1NDc4MzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Solar Panels"
+                  src={heroImage}
+                  alt="AI Marketing Solution"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
@@ -316,13 +328,13 @@ export default function HomePage() {
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <motion.div
-                    className="inline-flex items-center text-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300"
-                    whileHover={{ x: 5 }}
+                  <Link
+                    to={`/services#${service.id}`}
+                    className="inline-flex items-center text-primary font-semibold group-hover:gap-3 gap-2 transition-all duration-300 relative z-10"
                   >
                     Learn More
                     <ArrowRight className="w-5 h-5" />
-                  </motion.div>
+                  </Link>
                 </div>
               </motion.div>
             ))}

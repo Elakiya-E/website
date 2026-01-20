@@ -120,7 +120,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: 'About Us', path: '/about' },
-                { name: 'Services', path: '/services' },
+                { name: 'Services', path: '/solutions' },
                 { name: 'Case Studies', path: '/case-studies' },
                 { name: 'Pricing', path: '/pricing' },
               ].map((link, index) => (
@@ -149,10 +149,10 @@ export default function Footer() {
             </div>
             <ul className="space-y-3">
               {[
-                'AI Automation',
-                'Retrofit Lead Gen',
-                'Paid Media',
-                'SEO & Content',
+                { name: 'AI Automation', id: 'ai-automation' },
+                { name: 'Retrofit Lead Gen', id: 'retrofit' },
+                { name: 'Paid Media', id: 'paid-media' },
+                { name: 'SEO & Content', id: 'seo-content' },
               ].map((service, index) => (
                 <motion.li
                   key={index}
@@ -161,10 +161,12 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="text-muted-foreground flex items-center group cursor-default"
+                  className="text-muted-foreground group cursor-pointer"
                 >
-                  <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2 group-hover:bg-primary group-hover:scale-125 transition-all"></div>
-                  <span className="group-hover:text-foreground transition-colors">{service}</span>
+                  <Link to={`/solutions#${service.id}`} className="flex items-center w-full">
+                    <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2 group-hover:bg-primary group-hover:scale-125 transition-all"></div>
+                    <span className="group-hover:text-foreground transition-colors">{service.name}</span>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
